@@ -1,0 +1,436 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        android:orientation="vertical">
+
+        <!-- client information section -->
+        <LinearLayout
+            android:id="@+id/clientIdGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/clientIDTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dip"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/clientID" />
+
+            <EditText
+                android:id="@+id/clientId"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.22"
+                android:ems="10"
+                android:padding="8dp"
+                android:background="@drawable/edit_text_border"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/serverGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/clientIdGroup" >
+
+            <TextView
+                android:id="@+id/serverTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dip"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/server" />
+
+            <AutoCompleteTextView
+                android:id="@+id/serverURI"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.22"
+                android:ems="10"
+                android:padding="8dp"
+                android:background="@drawable/edit_text_border"
+                android:hint="@string/serverURIHint"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/portGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/serverGroup" >
+
+            <TextView
+                android:id="@+id/portTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="35dip"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/port" />
+
+            <EditText
+                android:id="@+id/port"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.22"
+                android:ems="10"
+                android:hint="@string/portHint"
+                android:padding="8dp"
+                android:background="@drawable/edit_text_border"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cleanSessionCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/cleanSession"
+            android:contentDescription="@string/contentDescriptionCleanSession" />
+
+        <!-- check box control hide/show advanced settings section -->
+        <CheckBox
+            android:id="@+id/advancedSettingsCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/colorPrimary"
+            android:text="advanced settings"/>
+
+        <!-- advanced settings section -->
+        <LinearLayout
+            android:id="@+id/advancedSettingsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- user name -->
+            <LinearLayout
+                android:id="@+id/usernameGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/uname"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginRight="15dip"/>
+
+                <EditText
+                    android:id="@+id/unameNewConnection"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:layout_weight="0.22"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="@string/unameHint"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/colorPrimary"
+                    android:padding="8dp"
+                    android:inputType="text"
+                    >
+                </EditText>
+            </LinearLayout>
+
+            <!-- password -->
+            <LinearLayout
+                android:id="@+id/passwordGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/usernameGroup"
+                android:layout_marginTop="25dp" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pass"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginRight="25dip" />
+
+                <EditText
+                    android:id="@+id/passwordNewConnection"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:layout_weight="0.22"
+                    android:hint="@string/passwordHint"
+                    android:padding="8dp"
+                    android:background="@drawable/edit_text_border"
+                    android:inputType="textPassword" />
+            </LinearLayout>
+
+            <!-- ssl -->
+            <LinearLayout
+                android:id="@+id/sslGroupNewConnection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp" >
+
+                <CheckBox
+                    android:id="@+id/sslCheckBoxNewConnection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@string/ssl"/>
+
+                <EditText
+                    android:id="@+id/sslKeyLocationNewConnection"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:hint="@string/sslKeyLocaltion"
+                    android:inputType="text" >
+
+                </EditText>
+
+                <Button
+                    android:id="@+id/sslKeyButNewConnection"
+                    style="?android:attr/buttonStyleSmall"
+                    android:clickable="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@string/select" />
+
+            </LinearLayout>
+
+            <!-- time out -->
+            <LinearLayout
+                android:id="@+id/timeoutGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp" >
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/timeout"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginRight="35dip" />
+
+                <EditText
+                    android:id="@+id/timeoutNewConnection"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:layout_weight="0.22"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="@string/timeoutHint"
+                    android:padding="8dp"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <!-- keep a live -->
+            <LinearLayout
+                android:id="@+id/keepaliveGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp" >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/keepalive"
+                    android:singleLine="false"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginRight="25dip"/>
+
+                <EditText
+                    android:id="@+id/keepaLiveNewConnection"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:layout_weight="0.22"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="@string/keepaliveHint"
+                    android:padding="8dp"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <!-- check box controls hide/show last will section -->
+            <CheckBox
+                android:id="@+id/lastWillCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last Will"/>
+
+            <!-- last will section -->
+            <RelativeLayout
+                android:id="@+id/lastWillLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/topicGroupNewConnection" >
+
+                    <TextView
+                        android:id="@+id/topicTextViewNewConnection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="35dip"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@color/colorPrimary"
+                        android:text="@string/topic" />
+
+                    <EditText
+                        android:id="@+id/lastWillTopicNewConnection"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.22"
+                        android:layout_width="0dip"
+                        android:ems="10"
+                        android:background="@drawable/edit_text_border"
+                        android:inputType="text"
+                        android:padding="8dp"
+                        android:hint="@string/topicHint" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/messageGroupNewConnection"
+                    android:layout_marginTop="25dp"
+                    android:layout_below="@id/topicGroupNewConnection" >
+                    <TextView
+                        android:id="@+id/messageTextViewNewConnection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dip"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@color/colorPrimary"
+                        android:text="@string/message"
+                        />
+
+                    <EditText
+                        android:id="@+id/lastWillMessageNewConnection"
+                        android:layout_weight="0.22"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:padding="8dp"
+                        android:inputType="textMultiLine"
+                        android:background="@drawable/edit_text_border"
+                        android:hint="@string/messageHint" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/qosGroupNewConnection"
+                    android:layout_marginTop="25dp"
+                    android:layout_below="@id/messageGroupNewConnection" >
+
+                    <TextView
+                        android:id="@+id/qosTextViewNewConnection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginTop="10dp"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@color/colorPrimary"
+                        android:text="@string/qos" />
+
+                    <RadioGroup
+                        android:id="@+id/qosRadioNewConnection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <RadioButton
+                            android:id="@+id/qos0NewConnection"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@color/colorPrimary"
+                            android:checked="true"
+                            android:text="@string/qos0"
+                            />
+
+                        <RadioButton
+                            android:id="@+id/qos1NewConnection"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@color/colorPrimary"
+                            android:text="@string/qos1" />
+
+                        <RadioButton
+                            android:id="@+id/qos2NewConnection"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@color/colorPrimary"
+                            android:text="@string/qos2" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/retainedGroupNewConnection"
+                    android:layout_below="@id/qosGroupNewConnection"
+                    android:layout_marginTop="25dp" >
+                    <TextView
+                        android:id="@+id/retainedTextViewNewConnection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@color/colorPrimary"
+                        android:text="@string/retained" />
+
+                    <CheckBox
+                        android:id="@+id/retainedCheckBoxNewConnection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/empty" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:text="Connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:id="@+id/connectButtonNewConnection"
+            android:layout_gravity="center"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/colorPrimary"
+            android:layout_centerHorizontal="true" />
+
+    </LinearLayout>
+
+</ScrollView>

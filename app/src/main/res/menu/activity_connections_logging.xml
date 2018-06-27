@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/newConnection" android:enabled="true" 
+        android:titleCondensed="@string/newConnectionShort" 
+        android:title="@string/newConnection"
+        android:showAsAction="always" >
+    </item>
+    <item android:id="@+id/endLogging" android:enabled="true"
+        android:title="@string/endLogging"
+        android:showAsAction="never">
+        
+    </item>
+</menu>

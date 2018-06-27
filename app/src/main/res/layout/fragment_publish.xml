@@ -1,0 +1,154 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+
+<LinearLayout   
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+     android:id="@+id/topicGroup" >
+    
+    <TextView
+        android:id="@+id/topictextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="35dip"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/topic" />
+
+    <EditText
+        android:id="@+id/topicPublish"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.22"
+        android:layout_width="0dip"
+        android:ems="10"
+        android:textColor="#000000"
+        android:inputType="text"
+        android:padding="8dp"
+        android:background="@drawable/edit_text_border"
+        android:hint="@string/topicHint" />
+</LinearLayout>
+
+
+
+
+<LinearLayout   
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/messageGroup"
+    android:layout_marginTop="25dp"
+    android:layout_below="@id/topicGroup" >
+    <TextView
+        android:id="@+id/messageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dip"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/message"
+         />
+    
+        <EditText
+        android:id="@+id/messagePublish"
+        android:layout_weight="0.22"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:padding="8dp"
+        android:textColor="#000000"
+        android:inputType="textMultiLine"
+        android:background="@drawable/edit_text_border"
+        android:hint="@string/messageHint" />
+    
+    </LinearLayout>
+    
+
+
+<LinearLayout   
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/qosGroup"
+    android:layout_marginTop="25dp"
+    android:layout_below="@id/messageGroup" >
+
+    <TextView
+        android:id="@+id/qosTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/qos" />
+
+    <RadioGroup
+        android:id="@+id/qosPublishRadio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+         >
+
+        <RadioButton
+            android:id="@+id/qos0Publish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/qos0"
+             />
+
+        <RadioButton
+            android:id="@+id/qos1Publish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/qos1" />
+
+        <RadioButton
+            android:id="@+id/qos2Publish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/qos2" />
+    </RadioGroup>
+
+</LinearLayout>
+
+<LinearLayout   
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/retainedGroup"
+    android:layout_below="@id/qosGroup"
+    android:layout_marginTop="25dp" >
+    <TextView
+        android:id="@+id/retainedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/retained" />
+
+    <CheckBox
+        android:id="@+id/retainedPublish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/empty" />
+</LinearLayout>
+
+    <Button
+        android:id="@+id/publishBtn"
+        android:text="publish"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/retainedGroup"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
